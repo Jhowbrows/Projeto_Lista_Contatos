@@ -2,9 +2,10 @@ import { FormEvent, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-import { BotaoSalvar, MainContainer, Titulo } from '../../styles'
+import { BotaoSalvar, Titulo } from '../../styles'
 import { Campo } from '../../styles'
 import { Form, Opcoes, Opcao } from './styles'
+import { CadastCont } from './styles'
 import * as enums from '../../utils/enums/Tarefa'
 
 import { cadastrar } from '../../store/reducers/tarefas'
@@ -34,7 +35,7 @@ const Formulario = () => {
   }
 
   return (
-    <MainContainer>
+    <CadastCont>
       <Titulo>Nova tarefa</Titulo>
       <Form onSubmit={cadastrarTarefa}>
         <Campo
@@ -75,7 +76,7 @@ const Formulario = () => {
         </Opcoes>
         <BotaoSalvar type="submit">Cadastrar</BotaoSalvar>
       </Form>
-    </MainContainer>
+    </CadastCont>
   )
 }
 

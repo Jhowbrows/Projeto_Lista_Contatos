@@ -14,6 +14,7 @@ const EstiloGlobal = createGlobalStyle`
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 224px auto;
+  background-color: rgb(255, 232, 227);
 `
 
 export const MainContainer = styled.main`
@@ -28,6 +29,7 @@ export const Titulo = styled.h2`
   margin-bottom: 40px;
   font-size: 18px;
   font-weight: bold;
+  text-align: center;
 `
 
 export const Campo = styled.input`
@@ -51,6 +53,11 @@ export const Botao = styled.button`
   border: 2px solid #fff;
   border-radius: 8px;
   margin-right: 8px;
+  transition: 0.4s ease-in;
+
+  &:hover {
+    background-color: rgb(253, 185, 146);
+  }
 `
 
 export const BotaoSalvar = styled(Botao)`

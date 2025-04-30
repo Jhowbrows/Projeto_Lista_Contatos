@@ -17,4 +17,9 @@ export const Circulo = styled(Link)`
   align-items: center;
   font-size: 40px;
   text-decoration: none;
+  transition: 0.4s ease-in;
+
+  &:hover {
+    background-color: rgb(253, 185, 146);
+  }
 `

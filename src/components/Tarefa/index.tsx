@@ -1,5 +1,5 @@
-import { ChangeEvent, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { ChangeEvent, useEffect, useState } from 'react'
 
 import * as S from './styles'
 
@@ -47,7 +47,7 @@ const Tarefa = ({
 
   return (
     <S.Card>
-      <label htmlFor={titulo}>
+      <S.Cardin htmlFor={titulo}>
         <input
           type="checkbox"
           id={titulo}
@@ -58,7 +58,7 @@ const Tarefa = ({
           {estaEditando && <em>Editando: </em>}
           {titulo}
         </S.Titulo>
-      </label>
+      </S.Cardin>
       <S.Tag parametro="prioridade" prioridade={prioridade}>
         {prioridade}
       </S.Tag>

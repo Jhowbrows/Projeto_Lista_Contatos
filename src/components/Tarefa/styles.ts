@@ -27,8 +27,13 @@ export const Card = styled.div`
   background-color: #fcfcfc;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 16px;
-  margin-bottom: 32px;
   border-radius: 16px;
+  border: 2px solid ${variaveis.vinho};
+  max-width: 50%;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 32px;
+  text-align: center;
 
   label {
     display: flex;
@@ -66,6 +71,7 @@ export const Descricao = styled.textarea`
   resize: none;
   border: none;
   background-color: transparent;
+  text-align: center;
 `
 
 export const BarraAcoes = styled.div`
@@ -89,4 +95,11 @@ export const Email = styled.textarea`
   resize: none;
   border: none;
   background-color: transparent;
+  text-align: center;
+`
+
+export const Cardin = styled.label`
+  display: flex;
+  justify-content: center;
+  margin: 5px auto;
 `
