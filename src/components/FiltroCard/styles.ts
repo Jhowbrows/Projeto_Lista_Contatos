@@ -1,0 +1,26 @@
+import styled from 'styled-components'
+
+type Props = {
+  ativo: boolean
+}
+
+export const Card = styled.div<Props>`
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 15%;
+  border: 2px solid ${(props) => (props.ativo ? '#7d1a0c' : '#a1a1a1')};
+  background-color: ${(props) => (props.ativo ? '#fff' : '#fcfcfc')};
+  color: ${(props) => (props.ativo ? '#7d1a0c' : '##f5ecb7')};
+  border-radius: 8px;
+  cursor: pointer;
+`
+export const Contador = styled.span`
+  font-weight: bold;
+  font-size: 24px;
+  display: block;
+`
+
+export const Label = styled.span`
+  font-size: 14px;
+`
