@@ -35,6 +35,10 @@ export const Card = styled.div`
   margin-bottom: 32px;
   text-align: center;
 
+  @media (min-width: 2560px) {
+    max-width: 560px;
+  }
+
   label {
     display: flex;
     align-items: center;
