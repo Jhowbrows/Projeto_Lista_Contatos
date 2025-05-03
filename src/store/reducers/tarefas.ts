@@ -51,7 +51,6 @@ const tarefasSlice = createSlice({
       if (indexDaTarefa >= 0) {
         state.itens[indexDaTarefa] = action.payload
       }
-      // tarefaParaEditar = action.payload
     },
     cadastrar: (state, action: PayloadAction<Omit<Tarefa, 'id'>>) => {
       const tarefaJaExiste = state.itens.find(

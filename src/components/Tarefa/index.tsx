@@ -17,12 +17,12 @@ const Tarefa = ({
   status,
   titulo,
   id,
-  email
+  email: emailInicial
 }: Props) => {
   const dispatch = useDispatch()
   const [estaEditando, setEstaEditando] = useState(false)
   const [descricao, setDescricao] = useState('')
-  const [emailState, setEmail] = useState('')
+  const [email, setEmail] = useState('')
 
   useEffect(() => {
     if (descricaoOriginal.length > 0) {
@@ -30,9 +30,16 @@ const Tarefa = ({
     }
   }, [descricaoOriginal])
 
+  useEffect(() => {
+    if (emailInicial.length > 0) {
+      setEmail(emailInicial)
+    }
+  }, [emailInicial])
+
   function cancelarEdicao() {
     setEstaEditando(false)
     setDescricao(descricaoOriginal)
+    setEmail(emailInicial)
   }
 
   function alteraStatusTarefa(evento: ChangeEvent<HTMLInputElement>) {
@@ -71,7 +78,7 @@ const Tarefa = ({
         onChange={(evento) => setDescricao(evento.target.value)}
       />
       <S.Email
-        disabled={!emailState}
+        disabled={!estaEditando}
         value={email}
         onChange={(evento) => setEmail(evento.target.value)}
       />
