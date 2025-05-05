@@ -15,7 +15,7 @@ const Tarefa = ({
   descricao: descricaoOriginal,
   prioridade,
   status,
-  titulo,
+  titulo: tituloOriginal,
   id,
   email: emailInicial
 }: Props) => {
@@ -23,6 +23,7 @@ const Tarefa = ({
   const [estaEditando, setEstaEditando] = useState(false)
   const [descricao, setDescricao] = useState('')
   const [email, setEmail] = useState('')
+  const [titulo, setTitulo] = useState('')
 
   useEffect(() => {
     if (descricaoOriginal.length > 0) {
@@ -36,10 +37,17 @@ const Tarefa = ({
     }
   }, [emailInicial])
 
+  useEffect(() => {
+    if (tituloOriginal.length > 0) {
+      setTitulo(tituloOriginal)
+    }
+  }, [tituloOriginal])
+
   function cancelarEdicao() {
     setEstaEditando(false)
     setDescricao(descricaoOriginal)
     setEmail(emailInicial)
+    setTitulo(tituloOriginal)
   }
 
   function alteraStatusTarefa(evento: ChangeEvent<HTMLInputElement>) {
@@ -61,10 +69,11 @@ const Tarefa = ({
           checked={status === enums.Status.VERIFICADO}
           onChange={alteraStatusTarefa}
         />
-        <S.Titulo>
-          {estaEditando && <em>Editando: </em>}
-          {titulo}
-        </S.Titulo>
+        <S.Titulo
+          disabled={!estaEditando}
+          value={titulo}
+          onChange={(evento) => setTitulo(evento.target.value)}
+        ></S.Titulo>
       </S.Cardin>
       <S.Tag parametro="prioridade" prioridade={prioridade}>
         {prioridade}

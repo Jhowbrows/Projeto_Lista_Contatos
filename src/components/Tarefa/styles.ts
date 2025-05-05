@@ -45,11 +45,21 @@ export const Card = styled.div`
     margin-bottom: 16px;
   }
 `
+export const Cardin = styled.label`
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  margin: 5px auto;
+`
 
-export const Titulo = styled.h3`
+export const Titulo = styled.input`
   font-size: 18px;
   font-weight: bold;
   margin-left: 8px;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  resize: none;
 `
 
 export const Tag = styled.span<TagProps>`
@@ -100,10 +110,4 @@ export const Email = styled.textarea`
   border: none;
   background-color: transparent;
   text-align: center;
-`
-
-export const Cardin = styled.label`
-  display: flex;
-  justify-content: center;
-  margin: 5px auto;
 `
